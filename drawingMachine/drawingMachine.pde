@@ -1,10 +1,11 @@
-  
+PImage img;
 float x = 0;
 float size = 25;
 
 void setup() {
   size(800, 600, P2D);
   ellipseMode(CENTER);
+  img = loadImage("monke.jpg");
   
 }
 
@@ -23,10 +24,11 @@ void draw() {
   triangle(x++*1.5, height-35, x++*1.5, height-15, x++*1.5-10, height-25);
   triangle(x++*0.5,height/2-10,x++*0.5,height/2+10,x++*0.5-15,height/2-10);
   if(mousePressed) {
+    background(255, 255, 255);
     ellipseMode(CENTER);
     fill(3, 156, 99);
     stroke(255, 0, 0);
-    
+    image(img, width/4, height/4, width/2, height/2);
     ellipse(mouseX, mouseY, size, size);
     triangle(x--, 35, x--, 10, x---20, 20);
     triangle(x--*1.5, height-35, x--*1.5, height-15, x--*1.5-10, height-25);
